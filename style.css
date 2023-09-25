@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+.container {
+  padding: 10px;
+  min-width: 1380px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0 auto;
+  width: 85%;
+}
+
+header .title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+header .title img {
+  margin-right: 0.5em;
+  max-width: 3em;
+}
+
+header .score {
+  margin: 0;
+  color: #6c90ac;
+}
+
+header .tried {
+  margin-top: 0;
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 85%;
+}
+
+.card-base {
+  /* 卡片在容器中的排版 */
+  flex: 7% 0 1;
+  margin: 2px;
+  height: 9vw;
+  min-height: 124px;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  background: url('img/back.png');
+  background-size: cover;
+}
+
+.card {
+  /* 卡片內部元素的排版 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border-radius: 2px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.card img {
+  max-width: 20%;
+  align-self: center;
+}
+
+.card p {
+  margin: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.card p:first-child {
+  align-self: end;
+}
+
+.card p:last-child {
+  transform: rotate(180deg);
+  align-self: start;
+}
+
+.heart, .diamond {
+  color: red;
+}
+
+.back {
+  opacity: 0;
+}
+
+.paired {
+  background-color: #dae0e3;
+}
+
+.wrong {
+  animation: wrongAnimation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 5;
+}
+
+@keyframes wrongAnimation {
+  to {
+    border: 2px solid #FA7F08;
+    border-radius: 5px;
+  }
+}
+
+/** Game finished **/
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 33vh;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+}
+
+.completed p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+
+.completed p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
